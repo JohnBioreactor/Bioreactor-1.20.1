@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bioreactor:item/gaz_n2_bucket"
+  }
+}

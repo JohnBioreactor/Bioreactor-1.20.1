@@ -1,0 +1,16 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "chance": 0.8,
+      "count": 1,
+      "item": "bioreactor:glucose"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "bioreactor:sampling_first_time",
+  "display": {
+    "icon": { "item": "minecraft:cow_spawn_egg" },
+    "title": {
+      "translate": "advancement.bioreactor.sampling_entity_first_time.title"
+    },
+    "description": {
+      "translate": "advancement.bioreactor.sampling_entity_first_time.description",
+      "color": "#DBA213"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_microbiote_syringe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "bioreactor:sample_microbiote"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_microbiote_syringe"]
+  ]
+}

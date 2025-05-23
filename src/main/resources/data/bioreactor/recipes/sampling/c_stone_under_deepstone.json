@@ -1,0 +1,14 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:stone"],
+  "context": {
+    "deep_block": "minecraft:stone",
+    "deep_threshold": 15
+  },
+  "outputs": [
+    {
+      "item": "minecraft:gray_wool",
+      "chance": 1.0
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "bioreactor:root",
+  "display": {
+    "icon": { "item": "bioreactor:sample_soil" },
+    "title": { "translate": "advancement.bioreactor.sampling.title" },
+    "description": {
+      "translate": "advancement.bioreactor.sampling.description",
+      "color": "#DBA213"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": { "trigger": "minecraft:tick" }
+  },
+  "requirements": [
+    ["tick"]
+  ]
+}

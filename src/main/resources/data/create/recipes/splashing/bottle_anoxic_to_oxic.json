@@ -1,0 +1,15 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "results": [
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "input_nbt": {
+    "anoxic": true
+  },
+  "result_nbt": {
+    "oxic": true
+  }
+}

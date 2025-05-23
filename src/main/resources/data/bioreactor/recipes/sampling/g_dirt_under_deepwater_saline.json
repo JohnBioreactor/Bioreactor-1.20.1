@@ -1,0 +1,17 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:dirt"],
+  "context": {
+    "deep_fluid": "minecraft:water",
+    "deep_threshold": 15,
+    "nbt": {
+      "salinity": 1
+    }
+  },
+  "outputs": [
+    {
+      "item": "minecraft:cyan_wool",
+      "chance": 1.0
+    }
+  ]
+}

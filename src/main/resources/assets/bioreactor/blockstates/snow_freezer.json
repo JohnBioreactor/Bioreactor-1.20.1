@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bioreactor:block/snow_freezer/brazier"
+    }
+  }
+}

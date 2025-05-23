@@ -1,0 +1,20 @@
+{
+  "metabolism_ID": "glucose_x_fermentation",
+  "ref_DOI": "",
+  "ingredients": {
+    "item": [
+      {"item": "bioreactor:glucose", "count": 1}
+    ],
+    "fluid": []
+  },
+  "results": {
+    "item": [{"item": "bioreactor:organic_acids", "count": 4}],
+    "fluid": [
+      {"fluid": "bioreactor:gaz_co2_source", "amount": 50},
+      {"fluid": "bioreactor:gaz_h2_source", "amount": 50}
+    ]
+  },
+  "oxygen_requirement": "ANAEROBIC",
+  "pHAdjustment": -2,
+  "requireLight": false
+}

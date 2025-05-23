@@ -1,0 +1,13 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:air"],
+  "context": {
+    "height": {"min": 300, "max": 330}
+  },
+  "outputs": [
+    {
+      "item": "bioreactor:sample_sky",
+      "chance": 1.0
+    }
+  ]
+}

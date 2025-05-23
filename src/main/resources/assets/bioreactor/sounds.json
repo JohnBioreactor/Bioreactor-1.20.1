@@ -1,0 +1,29 @@
+{
+  "snow_freezer_break": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.stone.break"
+      },
+      {
+        "type": "event",
+        "name": "minecraft:entity.skeleton.step"
+      }
+    ],
+    "subtitle": "bioreactor.subtitle.snow_freezer_break"
+  },
+  "snow_freezer_place": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:block.stone.place"
+      },
+      {
+        "type": "event",
+        "name": "minecraft:entity.skeleton.step"
+      }
+    ],
+    "subtitle": "bioreactor.subtitle.snow_freezer_place"
+  }
+
+}

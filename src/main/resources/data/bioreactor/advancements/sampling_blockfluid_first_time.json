@@ -1,0 +1,32 @@
+{
+  "parent": "bioreactor:sampling_first_time",
+  "display": {
+    "icon": { "item": "minecraft:stone" },
+    "title": {
+      "translate": "advancement.bioreactor.sampling_blockfluid_first_time.title"
+    },
+    "description": {
+      "translate": "advancement.bioreactor.sampling_blockfluid_first_time.description",
+      "color": "#DBA213"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_environmental_sample": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "bioreactor:sample_block_fluid"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_environmental_sample"]
+  ]
+}

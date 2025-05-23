@@ -1,0 +1,14 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:dirt"],
+  "context": {
+    "above_block": "minecraft:dirt",
+    "count": 2
+  },
+  "outputs": [
+    {
+      "item": "minecraft:orange_wool",
+      "chance": 1.0
+    }
+  ]
+}

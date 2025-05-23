@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bioreactor:item/syringe_empty_oxic"
+  },
+  "overrides": [
+    {
+      "predicate": { "bioreactor:syringe_empty_texture": 1.0 },
+      "model": "bioreactor:item/syringe_empty_anoxic"
+    },
+    {
+      "predicate": { "bioreactor:syringe_empty_texture": 2.0 },
+      "model": "bioreactor:item/syringe_empty_sterile_oxic"
+    },
+    {
+      "predicate": { "bioreactor:syringe_empty_texture": 3.0 },
+      "model": "bioreactor:item/syringe_empty_sterile_anoxic"
+    }
+  ]
+}

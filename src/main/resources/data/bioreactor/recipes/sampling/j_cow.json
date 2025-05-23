@@ -1,0 +1,10 @@
+{
+  "type": "bioreactor:sampling",
+  "mob_sampled": "minecraft:cow",
+  "outputs": [
+    {
+      "item": "bioreactor:syringe_cow",
+      "chance": 1.0
+    }
+  ]
+}

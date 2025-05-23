@@ -1,0 +1,19 @@
+{
+  "metabolism_ID": "organic_acids_x_sulfate",
+  "ref_DOI": "",
+  "ingredients": {
+    "item": [
+      {"item": "bioreactor:organic_acids", "count": 1}
+    ],
+    "fluid": []
+  },
+  "results": {
+    "item": [],
+    "fluid": [
+      {"fluid": "bioreactor:gaz_co2_source", "amount": 200},
+      {"fluid": "bioreactor:gaz_h2s_source", "amount": 200}
+    ]
+  },
+  "pHAdjustment": -1,
+  "requireLight": false
+}

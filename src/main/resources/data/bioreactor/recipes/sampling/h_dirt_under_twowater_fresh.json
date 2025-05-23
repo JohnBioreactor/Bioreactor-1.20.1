@@ -1,0 +1,19 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:dirt"],
+  "context": {
+    "fluid_above": {
+      "name": "minecraft:water",
+      "count": 2
+    },
+    "nbt": {
+      "salinity": 0
+    }
+  },
+  "outputs": [
+    {
+      "item": "minecraft:light_blue_wool",
+      "chance": 1.0
+    }
+  ]
+}

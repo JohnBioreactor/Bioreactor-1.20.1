@@ -1,0 +1,14 @@
+{
+  "type": "bioreactor:sampling",
+  "block_sampled": ["minecraft:stone"],
+  "context": {
+    "above_block": "minecraft:stone",
+    "count": 2
+  },
+  "outputs": [
+    {
+      "item": "minecraft:light_gray_wool",
+      "chance": 1.0
+    }
+  ]
+}

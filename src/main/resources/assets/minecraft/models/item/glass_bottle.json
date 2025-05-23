@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:item/glass_bottle"
+  },
+  "overrides": [
+    {
+      "predicate": { "bioreactor:glass_bottle_texture": 1.0 },
+      "model": "bioreactor:item/glass_bottle_anoxic"
+    },
+    {
+      "predicate": { "bioreactor:glass_bottle_texture": 2.0 },
+      "model": "bioreactor:item/glass_bottle_sterile_oxic"
+    },
+    {
+      "predicate": { "bioreactor:glass_bottle_texture": 3.0 },
+      "model": "bioreactor:item/glass_bottle_sterile_anoxic"
+    }
+  ]
+}

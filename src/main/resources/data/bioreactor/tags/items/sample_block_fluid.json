@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "bioreactor:sample_soil",
+    "bioreactor:sample_seawater_sediment",
+    "bioreactor:sample_sky"
+  ]
+}

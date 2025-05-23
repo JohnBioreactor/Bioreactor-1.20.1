@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "results": [
+    {
+      "item": "bioreactor:glucose",
+      "count": 1,
+      "chance": 0.6
+    }
+  ]
+}

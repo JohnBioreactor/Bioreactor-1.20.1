@@ -1,0 +1,21 @@
+{
+  "metabolism_ID": "glucose_x_o2",
+  "ref_DOI": "",
+  "ingredients": {
+    "item": [
+      {"item": "bioreactor:glucose", "count": 1}
+    ],
+    "fluid": [
+      {"fluid": "bioreactor:gaz_air_source", "amount": 200}
+    ]
+  },
+  "results": {
+    "item": [],
+    "fluid": [
+      {"fluid": "bioreactor:gaz_co2_source", "amount": 200}
+    ]
+  },
+  "oxygen_requirement": "AEROBIC",
+  "pHAdjustment": 0,
+  "requireLight": true
+}

@@ -1,0 +1,20 @@
+{
+  "metabolism_ID": "glucose_x_iron",
+  "ref_DOI": "",
+  "ingredients": {
+    "item": [
+      {"item": "bioreactor:glucose", "count": 4},
+      {"item": "minecraft:iron_ingot", "count": 4}
+    ],
+    "fluid": []
+  },
+  "results": {
+    "item": [],
+    "fluid": [
+      {"fluid": "bioreactor:gaz_co2_source", "amount": 200},
+      {"fluid": "bioreactor:gaz_h2s_source", "amount": 200}
+    ]
+  },
+  "pHAdjustment": -8,
+  "requireLight": true
+}

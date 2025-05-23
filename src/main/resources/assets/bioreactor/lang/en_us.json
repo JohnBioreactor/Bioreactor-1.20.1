@@ -1,0 +1,147 @@
+{
+  "item.bioreactor.syringe_empty": "empty syringe",
+  "item.bioreactor.sample_soil": "Soil Sample",
+  "item.bioreactor.sample_sky": "Sky Sample",
+  "item.bioreactor.syringe_cow": "Cow Microbiote Sample",
+  "item.bioreactor.sample_seawater_sediment": "Sediment of Freshwater Sample",
+  "jei.bioreactor.sampling.title": "Environmental Sampling",
+  "jei.bioreactor.sampling.count" : "Count : %s",
+
+  "item.bioreactor.enriched_bacteria_multiple": "Enriched Unkown bacteria",
+  "tooltip.bioreactor.enriched_bacteria_multiple_1": "Non-Axenic Biological Sample",
+  "tooltip.bioreactor.enriched_bacteria_multiple_2": "%s bacteria can still be enriched",
+
+  "item.bioreactor.dead_biomass": "Dead Biomass",
+  "item.bioreactor.bacteria_escherichia_coli": "§oEscherichia coli",
+  "item.bioreactor.bacteria_pseudomonas_aeruginosa": "§oPseudomonas aeruginosa",
+
+  "item.bioreactor.bioreactor_empty_bottle": "Empty bottle",
+
+  "item.bioreactor.glucose": "Glucose, C₆H₁₂O₆",
+  "item.bioreactor.organic_acids": "Organic Acids, CH₃–(CH₂)ₙ–COOH",
+  "item.bioreactor.powder_sulfur": "Elemental sulfur (⍺–S₈⁰) Powder",
+  "item.bioreactor.powder_sulfate": "Sulfate (SO₄²⁻) Powder",
+  "item.bioreactor.powder_ammonium": "Ammonium (NH₄⁺) Powder",
+  "item.bioreactor.powder_nitrate": "Nitrate (NO₃⁻) Powder",
+  "item.bioreactor.powder_nitrite": "Nitrite (NO₂⁻) Powder",
+  "item.bioreactor.powder_hcl": "Hydrochloric acid (HCl) Powder",
+  "item.bioreactor.powder_naoh": "Sodium hydroxide (NaOH) Powder",
+  "item.bioreactor.powder_h2so4": "Sulfuric acid (H₂SO₄) Powder",
+
+
+
+
+  "item.bioreactor.gaz_air_bucket" : "Air Bucket",
+  "fluid_type.bioreactor.gaz_air_fluidtype" : "Air, 78% N₂ + 22% O₂",
+  "block.bioreactor.gaz_air" : "Air, 78% N₂ + 22% O₂",
+
+  "item.bioreactor.gaz_ch4_bucket" : "Methane, CH₄ Bucket",
+  "fluid_type.bioreactor.gaz_ch4_fluidtype" : "Methane, CH₄",
+  "block.bioreactor.gaz_ch4" : "Methane, CH₄",
+
+  "item.bioreactor.gaz_co2_bucket" : "Carbon Dioxide CO₂ Bucket",
+  "fluid_type.bioreactor.gaz_co2_fluidtype" : "Carbon Dioxide, CO₂",
+  "block.bioreactor.gaz_co2" : "Carbon Dioxide, CO₂",
+
+  "item.bioreactor.gaz_h2_bucket" : "Hydrogene H₂ Bucket",
+  "fluid_type.bioreactor.gaz_h2_fluidtype" : "Hydrogene, H₂",
+  "block.bioreactor.gaz_h2" : "Hydrogene, H₂",
+
+  "item.bioreactor.gaz_h2o_bucket" : "Water Vapor H₂O Bucket",
+  "fluid_type.bioreactor.gaz_h2o_fluidtype" : "Water Vapor, H₂O(g)",
+  "block.bioreactor.gaz_h2o" : "Water Vapor, H₂O(g)",
+
+  "item.bioreactor.gaz_h2s_bucket" : "Hydrogen sulfide H₂S Bucket",
+  "fluid_type.bioreactor.gaz_h2s_fluidtype" : "Hydrogen sulfide, H₂S",
+  "block.bioreactor.gaz_h2s" : "Hydrogen sulfide, H₂S",
+
+  "item.bioreactor.gaz_n2_bucket" : "Nitrogen, N₂ Bucket",
+  "fluid_type.bioreactor.gaz_n2_fluidtype" : "Nitrogen, N₂",
+  "block.bioreactor.gaz_n2" : "Nitrogen, N₂",
+
+
+
+  "item.bioreactor.anaerobic_chamber": "Anaerobic Chamber",
+  "block.bioreactor.anaerobic_chamber" : "Anaerobic chamber",
+  "entity.bioreactor.anaerobic_chamber" : "Anaerobic chamber",
+  "tooltip.bioreactor.tank_content": "Tank %s : %s",
+  "tooltip.bioreactor.tank_empty": "Empty",
+  "tooltip.bioreactor.small_bioreactor.water_info": "%s %s %s, pH : %s",
+  "tooltip.bioreactor.freshwater": "Freshwater",
+  "tooltip.bioreactor.seawater": "Seawater",
+  "tooltip.bioreactor.total_capacity": "Total Capacity : %s",
+  "tooltip.bioreactor.small_bioreactor.rpm_too_high_lign1": "RPM is too high",
+  "tooltip.bioreactor.small_bioreactor.rpm_too_high_lign2": "You're gonna kill these bacteria !",
+  "tooltip.bioreactor.small_bioreactor.rpm_too_low_lign1": "RPM is too low",
+  "tooltip.bioreactor.small_bioreactor.rpm_too_low_lign2" : "The growth media needs to be homogenised !",
+  "tooltip.bioreactor.small_bioreactor.max_rpm": "Maximal RPM: ",
+  "tooltip.bioreactor.small_bioreactor.min_rpm" : "Minimal RPM: ",
+  "tooltip.bioreactor.small_bioreactor.actual_temperature" : "Actual temperature : ",
+  "tooltip.bioreactor.small_bioreactor.basin_output_full" : "Not enough space for item or fluid output",
+  "tooltip.bioreactor.small_bioreactor.basin_input_insufficient" : "Missing items or fluids for this recipe",
+  "tooltip.bioreactor.small_bioreactor.missing_anaerobic_chamber_input_fluids" : "Missing Gaz for this recipe",
+  "tooltip.bioreactor.small_bioreactor.insufficient_anaerobic_chamber_output_space.line1": "Risk of excessive gas pressure.",
+  "tooltip.bioreactor.small_bioreactor.insufficient_anaerobic_chamber_output_space.line2": "Please evacuate the excess.",
+
+
+  "block.bioreactor.snow_freezer": "Snow Freezer",
+  "bioreactor.subtitle.snow_freezer_break": "Block broken",
+  "bioreactor.subtitle.snow_freezer_place": "Block placed",
+  "bioreactor.recipe.heat_requirement.cooled": "Cooled",
+
+
+  "tooltip.bioreactor.oxygen.oxic": "Oxic, ☑O₂",
+  "tooltip.bioreactor.oxygen.anoxic": "Anoxic, ☒O₂",
+  "tooltip.bioreactor.sterile_material": "☑ Sterile material",
+
+  "jei.bioreactor.carbon_cycle.title": "C Cycle Metabolisms",
+  "jei.bioreactor.nitrogen_cycle.title": "N Cycle Metabolisms",
+  "jei.bioreactor.sulfur_cycle.title": "S Cycle Metabolisms",
+  "jei.bioreactor.metal_cycle.title": "Fe, Cu Cycle Metabolisms",
+  "jei.bioreactor.fan_nbtJEIcategory.title" : "Gaz Flushing and Sterilisation Process",
+
+  "jei.bioreactor.trophictype.C_donor" : "C donor",
+  "jei.bioreactor.trophictype.C_electron_donor" : "C and e⁻ donor",
+  "jei.bioreactor.trophictype.electron_donor" : "e⁻ donor",
+  "jei.bioreactor.trophictype.electron_acceptor" : "e⁻ acceptor",
+  "jei.bioreactor.tooltip.ph.acidified": "pH is acidified by %s",
+  "jei.bioreactor.tooltip.ph.alkalized": "pH is alkalized by %s",
+  "jei.bioreactor.tooltip.require_light.true": "Phototrophic metabolism: require §llight level§r §6§l>10§r",
+  "jei.bioreactor.tooltip.require_light.false": "Chemotrophic metabolism: Energy comes from §lchemicals§r",
+  "jei.bioreactor.tooltip.electron_donor.organotroph": "§6§lOrganotrophic§r§6 metabolism: e⁻ donor is §lorganic§r",
+  "jei.bioreactor.tooltip.electron_donor.lithotroph": "§6§lLithotrophic§r§6 metabolism: e⁻ donor is §linorganic§r",
+  "jei.bioreactor.tooltip.C_donor.heterotroph": "§7§lHeterotrophic§r§7 metabolism: Carbon source is §lorganic§r",
+  "jei.bioreactor.tooltip.C_donor.autotroph": "§7§lAutotrophic§r§7 metabolism: Carbon source is §linorganic§r",
+  "jei.bioreactor.tooltip.electron_acceptor.oxygen": "Aerobic Respiration",
+  "jei.bioreactor.tooltip.electron_acceptor.not_oxygen": "Anaerobic Respiration",
+  "jei.bioreactor.tooltip.o2.aerobic": "This metabolism §arequire§r at least §lxxMb§r of Air",
+  "jei.bioreactor.tooltip.o2.microaerophilic": "This metabolism is §cinhibited§r if more than §lxxmB§r of air is present",
+  "jei.bioreactor.tooltip.o2.anaerobic": "This metabolism is §cinhibited§r by oxygen",
+  "jei.bioreactor.cell_carbon": "Cell Carbon",
+  "jei.bioreactor.carbon_cycle.intermediate": "Intermediate",
+  "jei.bioreactor.carbon_cycle.header.glucose_x_fermentation": "Glucose Fermentation",
+  "jei.bioreactor.carbon_cycle.header.glucose_x_o2": "Glucose aerobic respiration",
+
+
+
+  "advancement.bioreactor.root.title": "Welcome to the world of Microbiology",
+  "advancement.bioreactor.root.description": "Lab stuff",
+  "advancement.bioreactor.sampling.title": "Sampling",
+  "advancement.bioreactor.sampling.description" : "Collect samples all around the cube !",
+  "advancement.bioreactor.cultivation.title": "Microbial Cultivation",
+  "advancement.bioreactor.cultivation.description": "Cultivate microorganisms to obtain axenic strains",
+
+  "advancement.bioreactor.sampling_first_time.title" : "My first sample",
+  "advancement.bioreactor.sampling_first_time.description": "That's one small step for a Steve, one microscopic leap for Microbiolgists",
+
+  "advancement.bioreactor.sampling_entity_first_time.title": "It stinks !",
+  "advancement.bioreactor.sampling_entity_first_time.description": "Obtain your first microbiota sample",
+
+  "advancement.bioreactor.sampling_blockfluid_first_time.title": "Rock in a bottle ? Why not",
+  "advancement.bioreactor.sampling_blockfluid_first_time.description": "Obtain your first environmental sample, of fluid or block",
+
+  "advancement.bioreactor.sampling_high_altitude.title" : "Scientists have no limits",
+  "advancement.bioreactor.sampling_high_altitude.description" : "Collect your first air sample above 300 meters altitude"
+
+
+}

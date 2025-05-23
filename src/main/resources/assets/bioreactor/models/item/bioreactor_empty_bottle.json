@@ -1,0 +1,36 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bioreactor:item/bioreactor_empty_bottle_base"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "bioreactor:oxygen": 1.0,
+        "bioreactor:sterility": 1.0
+      },
+      "model": "bioreactor:item/bioreactor_empty_bottle_ns_anoxic"
+    },
+    {
+      "predicate": {
+        "bioreactor:oxygen": 0.0,
+        "bioreactor:sterility": 1.0
+      },
+      "model": "bioreactor:item/bioreactor_empty_bottle_ns_oxic"
+    },
+    {
+      "predicate": {
+        "bioreactor:oxygen": 1.0,
+        "bioreactor:sterility": 0.0
+      },
+      "model": "bioreactor:item/bioreactor_empty_bottle_s_anoxic"
+    },
+    {
+      "predicate": {
+        "bioreactor:oxygen": 0.0,
+        "bioreactor:sterility": 0.0
+      },
+      "model": "bioreactor:item/bioreactor_empty_bottle_s_oxic"
+    }
+  ]
+}

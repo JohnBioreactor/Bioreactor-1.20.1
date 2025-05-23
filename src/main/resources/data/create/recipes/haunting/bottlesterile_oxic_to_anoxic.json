@@ -1,0 +1,19 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "results": [
+    { "item": "minecraft:glass_bottle" }
+  ],
+
+  "input_nbt": {
+    "sterile": true,
+    "oxic":    true
+  },
+
+  "result_nbt": {
+    "sterile": true,
+    "anoxic":  true
+  }
+}

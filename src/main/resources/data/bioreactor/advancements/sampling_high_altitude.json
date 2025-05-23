@@ -1,0 +1,21 @@
+{
+  "parent": "bioreactor:sampling_blockfluid_first_time",
+  "display": {
+    "icon": { "item": "minecraft:elytra" },
+    "title": { "translate": "advancement.bioreactor.sampling_high_altitude.title" },
+    "description": {
+      "translate": "advancement.bioreactor.sampling_high_altitude.description",
+      "color": "#DBA213"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "impossible": { "trigger": "minecraft:impossible" }
+  },
+  "requirements": [
+    ["impossible"]
+  ]
+}

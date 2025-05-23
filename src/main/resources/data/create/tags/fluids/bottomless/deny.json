@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "bioreactor:gaz_air_source",
+    "bioreactor:gaz_air_flowing",
+    "bioreactor:gaz_ch4_source",
+    "bioreactor:gaz_ch4_flowing",
+    "bioreactor:gaz_co2_source",
+    "bioreactor:gaz_co2_flowing",
+    "bioreactor:gaz_h2_source",
+    "bioreactor:gaz_h2_flowing",
+    "bioreactor:gaz_h2o_source",
+    "bioreactor:gaz_h2o_flowing",
+    "bioreactor:gaz_h2s_source",
+    "bioreactor:gaz_h2s_flowing",
+    "bioreactor:gaz_n2_source",
+    "bioreactor:gaz_n2_flowing"
+  ]
+}

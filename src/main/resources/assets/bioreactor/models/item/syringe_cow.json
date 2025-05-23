@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bioreactor:item/syringe_cow_oxic"
+  },
+  "overrides": [
+    {
+      "predicate": {"bioreactor:syringe_cow_texture": 1.0},
+      "model": "bioreactor:item/syringe_cow_anoxic"
+    }
+  ]
+}

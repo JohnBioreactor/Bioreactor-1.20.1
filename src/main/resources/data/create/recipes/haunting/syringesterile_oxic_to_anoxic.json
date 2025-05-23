@@ -1,0 +1,19 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    { "item": "bioreactor:syringe_empty" }
+  ],
+  "results": [
+    { "item": "bioreactor:syringe_empty" }
+  ],
+
+  "input_nbt": {
+    "sterile": true,
+    "oxic":    true
+  },
+
+  "result_nbt": {
+    "sterile": true,
+    "anoxic":  true
+  }
+}

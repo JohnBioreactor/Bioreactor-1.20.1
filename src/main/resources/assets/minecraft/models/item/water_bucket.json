@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:item/water_bucket"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "bioreactor:ph_extreme_texture": 1.0
+      },
+      "model": "bioreactor:item/water_bucket_extreme_ph"
+    }
+  ]
+}

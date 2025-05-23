@@ -1,0 +1,36 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_17",
+  "package": "net.john.bioreactor.content.mixin",
+  "refmap": "bioreactor.mixin-refmap.json",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "MechanicalMixerMixin",
+    "heatlevel.BlazeBurnerBlockEntityMixin",
+    "heatlevel.HeatConditionMixin",
+    "heatlevel.HeatLevelMixin",
+    "recipe.AbstractCookingRecipeMixin",
+    "recipe.BlastingTypeMixin",
+    "recipe.HauntingTypeMixin",
+    "recipe.ProcessingRecipeMixin",
+    "recipe.ProcessingRecipeSerializerMixin",
+    "recipe.ShapedRecipeMixin",
+    "recipe.SimpleCookingSerializerMixin",
+    "recipe.SplashingTypeMixin",
+    "watercreate.CombinedTankWrapperMixin",
+    "watercreate.CreativeFluidTankBlockEntityMixin",
+    "watercreate.FluidTankBlockEntityAccessorMixin",
+    "watercreate.FluidTankBlockEntityMixin",
+    "watercreate.GenericItemEmptyingMixin",
+    "watercreate.OpenEndedPipeAccessorMixin",
+    "watercreate.OpenEndedPipeMixin",
+    "watercreate.OpenEndFluidHandlerMixin",
+    "watervanilla.BottleItemMixin",
+    "watervanilla.BucketItemEmptyingMixin",
+    "watervanilla.BucketItemPickupMixin",
+    "watervanilla.FlowingFluidMixin"
+  ]
+}
