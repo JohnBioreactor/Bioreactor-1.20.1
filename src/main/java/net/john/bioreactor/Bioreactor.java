@@ -3,6 +3,7 @@ package net.john.bioreactor;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
+import net.john.bioreactor.content.bacteria.BacteriaDataManager;
 import net.john.bioreactor.content.block.BioreactorBlocks;
 import net.john.bioreactor.content.entity.BioreactorBlockEntity;
 import net.john.bioreactor.content.fluid.BioreactorFluidTypes;
@@ -18,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -51,6 +53,12 @@ public class Bioreactor {
         onCtor();
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(ChunkCapabilityAttacher.class);
+        MinecraftForge.EVENT_BUS.addListener(this::addReloadListeners);
+
+    }
+
+    private void addReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(new BacteriaDataManager());
     }
 
 

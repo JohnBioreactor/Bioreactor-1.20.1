@@ -1,0 +1,17 @@
+{
+  "bacteria_id": "escherichia_coli",
+  "axenic_item": "bioreactor:bacteria_escherichia_coli",
+  "o2_affinity": "ANAEROBIC",
+
+  "sampling_sites": [
+    "bioreactor:sample_soil",
+    "bioreactor:syringe_cow"
+  ],
+
+  "conditions": {
+    "salinity":    { "green": ["1"],            "yellow": ["0"]               },
+    "pH":          { "green": ["7"],            "yellow": ["6","8"]           },
+    "temperature": { "green": ["none"],         "yellow": ["smouldering"]     },
+    "metabolism":  { "green": ["glucose_x_sulfate"], "yellow": ["glucose_x_fermentation"] }
+  }
+}

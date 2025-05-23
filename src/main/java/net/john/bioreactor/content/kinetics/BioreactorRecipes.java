@@ -1,11 +1,12 @@
 package net.john.bioreactor.content.kinetics;
 
+import com.google.gson.JsonObject;
 import net.john.bioreactor.Bioreactor;
 import net.john.bioreactor.content.kinetics.Sampling.SamplingRecipe;
 import net.john.bioreactor.content.kinetics.Sampling.SamplingRecipeSerializer;
 import net.john.bioreactor.content.kinetics.axenisation.AxenisationRecipe;
-import net.john.bioreactor.content.kinetics.axenisation.AxenisationRecipeSerializer;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -18,16 +19,25 @@ public class BioreactorRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS =DeferredRegister.create(Registries.RECIPE_SERIALIZER, Bioreactor.MOD_ID);
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES =DeferredRegister.create(Registries.RECIPE_TYPE, Bioreactor.MOD_ID);
 
-    // Recipe
-    public static final RegistryObject<RecipeSerializer<SamplingRecipe>> SAMPLING_SERIALIZER =RECIPE_SERIALIZERS.register("sampling", SamplingRecipeSerializer::new);
+    /* ---------- Sampling ---------- */
+    public static final RegistryObject<RecipeSerializer<SamplingRecipe>> SAMPLING_SERIALIZER =
+            RECIPE_SERIALIZERS.register("sampling", SamplingRecipeSerializer::new);
 
-    // → Nouveau : RecipeType enregistré via DeferredRegister !
-    public static final RegistryObject<RecipeType<SamplingRecipe>> SAMPLING_TYPE =RECIPE_TYPES
-            .register("sampling",() -> RecipeType.simple(new ResourceLocation(Bioreactor.MOD_ID, "sampling")));
+    public static final RegistryObject<RecipeType<SamplingRecipe>> SAMPLING_TYPE =            // ← AJOUT
+            RECIPE_TYPES.register("sampling",
+                    () -> RecipeType.simple(new ResourceLocation(Bioreactor.MOD_ID, "sampling")));
 
-    public static final RecipeType<AxenisationRecipe> AXENISATION_TYPE =RecipeType.simple(new ResourceLocation(Bioreactor.MOD_ID, "axenisation"));
+    /* ---------- Axénisation ---------- */
+    public static final RecipeType<AxenisationRecipe> AXENISATION_TYPE =
+            RecipeType.simple(new ResourceLocation(Bioreactor.MOD_ID, "axenisation"));
 
-    public static final RegistryObject<RecipeSerializer<AxenisationRecipe>> AXENISATION_SERIALIZER = RECIPE_SERIALIZERS.register("axenisation", AxenisationRecipeSerializer::new);
+    public static final RegistryObject<RecipeSerializer<AxenisationRecipe>> AXENISATION_SERIALIZER =
+            RECIPE_SERIALIZERS.register("axenisation",
+                    () -> new RecipeSerializer<AxenisationRecipe>() {
+                        @Override public AxenisationRecipe fromJson(ResourceLocation id, JsonObject json) { return AxenisationRecipe.INSTANCE; }
+                        @Override public AxenisationRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) { return AxenisationRecipe.INSTANCE; }
+                        @Override public void toNetwork(FriendlyByteBuf buf, AxenisationRecipe rec) { /* rien */ }
+                    });
 
 //    public static final RecipeType<SmallBioreactorRecipe> SMALL_BIOREACTOR_TYPE =
 //            RecipeType.simple(new ResourceLocation(Bioreactor.MOD_ID, "small_bioreactor"));

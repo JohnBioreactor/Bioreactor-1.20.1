@@ -6,6 +6,7 @@ import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import net.john.bioreactor.content.item.BioreactorItems;
 import net.john.bioreactor.content.kinetics.Anaerobic_Chamber.AnaerobicChamberBlockEntity;
 import net.john.bioreactor.content.kinetics.BioreactorRecipes;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -261,39 +262,58 @@ public class RecipeProcessor {
 
     for (ItemStack expected : expectedInputs) {
         int requiredAmount = expected.getCount();
-        int totalFound = 0;
+        int found = 0;
+
         boolean isInoculum = AxenisationRecipe.getInoculumItems().contains(expected.getItem());
+        Item expectedItem = expected.getItem();
+
         for (int slot = 0; slot < handler.getSlots(); slot++) {
             ItemStack current = handler.getStackInSlot(slot);
             if (!current.isEmpty()) {
                 if (isInoculum) {
-                    if (expected.getItem() == BioreactorItems.ENRICHED_BACTERIA_MULTIPLE.get()) {
-                        // Si l'item attendu n'a pas de tag (ou est vide), accepter tout enriched item qui possède "remaining_bacteria"
+                    /* ---------- INOCULUM ---------- */
+                    if (expectedItem == BioreactorItems.ENRICHED_BACTERIA_MULTIPLE.get()) {
+                        // comportement déjà présent
                         if ((expected.getTag() == null || expected.getTag().isEmpty())
-                                && current.getItem() == expected.getItem()
-                                && current.getTag() != null && current.getTag().contains("remaining_bacteria")) {
-                            totalFound += current.getCount();
-                        } else {
-                            // Sinon, comparer strictement
-                            if (ItemStack.isSameItemSameTags(current, expected)) {
-                                totalFound += current.getCount();
-                            }
+                                && current.getItem() == expectedItem
+                                && current.getTag() != null
+                                && current.getTag().contains("remaining_bacteria")) {
+                            found += current.getCount();
+                        } else if (ItemStack.isSameItemSameTags(current, expected)) {
+                            found += current.getCount();
+                        }
+                    } else if (expectedItem == BioreactorItems.SAMPLE_SOIL.get()
+                        /* || expectedItem == BioreactorItems.SYRINGE_COW.get() */) {
+                        // NEW : ignorer le NBT, seule la “coquille” de l’item compte (uniquement pour l'aspect quantitatif)
+
+
+                        // Add new sample items here !
+
+
+
+
+
+
+                        if (current.getItem() == expectedItem) {
+                            found += current.getCount();
                         }
                     } else {
+                        // autre inoculum étiqueté → comparaison stricte
                         if (ItemStack.isSameItemSameTags(current, expected)) {
-                            totalFound += current.getCount();
+                            found += current.getCount();
                         }
                     }
                 } else {
+                    /* ---------- ITEM MÉTABOLIQUE ---------- */
                     if (ItemStack.isSameItem(current, expected)) {
-                        totalFound += current.getCount();
+                        found += current.getCount();
                     }
                 }
             }
         }
         LOGGER.debug("Checking " + expected.getItem().getDescriptionId() + " (" + (isInoculum ? "inoculum" : "metabolic")
-                + "): required=" + requiredAmount + ", found=" + totalFound);
-        if (totalFound < requiredAmount) {
+                + "): required=" + requiredAmount + ", found=" + found);
+        if (found < requiredAmount) {
             LOGGER.debug("Insufficient quantity of " + expected.getItem().getDescriptionId()
                     + " in Basin at " + basin.getBlockPos());
             return false;
@@ -310,43 +330,53 @@ public class RecipeProcessor {
         return false;
     }
 
-    for (ItemStack expected : expectedInputs) {
-        int remaining = expected.getCount();
-        boolean isInoculum = AxenisationRecipe.getInoculumItems().contains(expected.getItem());
-        LOGGER.debug("Attempting to consume " + expected.getItem().getDescriptionId()
-                     + " (" + (isInoculum ? "inoculum" : "metabolic") + "), required: " + remaining);
+        for (ItemStack expected : expectedInputs) {
+            int remaining     = expected.getCount();
+            boolean isInoculum = AxenisationRecipe.getInoculumItems().contains(expected.getItem());
+            Item expectedItem  = expected.getItem();
 
-        for (int slot = 0; slot < handler.getSlots() && remaining > 0; slot++) {
-            ItemStack current = handler.getStackInSlot(slot);
-            if (!current.isEmpty()) {
+            for (int slot = 0; slot < handler.getSlots() && remaining > 0; slot++) {
+                ItemStack current = handler.getStackInSlot(slot);
+                if (current.isEmpty()) continue;
+
                 boolean matches;
-                if (isInoculum && expected.getItem() == BioreactorItems.ENRICHED_BACTERIA_MULTIPLE.get()) {
-                    if ((expected.getTag() == null || expected.getTag().isEmpty())
-                            && current.getItem() == expected.getItem()
-                            && current.getTag() != null && current.getTag().contains("remaining_bacteria")) {
-                        matches = true;
+
+                if (isInoculum) {
+                    if (expectedItem == BioreactorItems.ENRICHED_BACTERIA_MULTIPLE.get()) {
+                        if ((expected.getTag() == null || expected.getTag().isEmpty())
+                                && current.getItem() == expectedItem
+                                && current.getTag() != null
+                                && current.getTag().contains("remaining_bacteria")) {
+                            matches = true;
+                        } else {
+                            matches = ItemStack.isSameItemSameTags(current, expected);
+                        }
+                    } else if (expectedItem == BioreactorItems.SAMPLE_SOIL.get()
+                        /* || expectedItem == BioreactorItems.SYRINGE_COW.get() */) {
+                        matches = current.getItem() == expectedItem;   // NEW : tag ignoré (uniquement pour l'aspect quantitatif)
                     } else {
                         matches = ItemStack.isSameItemSameTags(current, expected);
                     }
                 } else {
-                    matches = isInoculum ? ItemStack.isSameItemSameTags(current, expected)
-                                         : ItemStack.isSameItem(current, expected);
+                    matches = ItemStack.isSameItem(current, expected);
                 }
+
                 if (matches) {
                     int toExtract = Math.min(current.getCount(), remaining);
                     ItemStack extracted = handler.extractItem(slot, toExtract, false);
                     remaining -= extracted.getCount();
-                    LOGGER.debug("Extracted " + extracted.getCount() + " of "
-                                 + current.getItem().getDescriptionId() + " from slot " + slot);
+
+                    LOGGER.debug("Extracted {} of {} from slot {}",
+                            extracted.getCount(), expectedItem.getDescriptionId(), slot);
                 }
             }
+
+            if (remaining > 0) {
+                LOGGER.debug("Failed to consume exact quantity of {}; remaining={}",
+                        expectedItem.getDescriptionId(), remaining);
+                return false;
+            }
         }
-        if (remaining > 0) {
-            LOGGER.debug("Failed to consume exact quantity of " + expected.getItem().getDescriptionId()
-                         + ": remaining=" + remaining);
-            return false;
-        }
-    }
     LOGGER.debug("Successfully consumed all required inputs from Basin at " + basin.getBlockPos());
     return true;
 }
@@ -444,6 +474,7 @@ public class RecipeProcessor {
         return selectedInoculum.copy(); // Retourne une copie pour éviter les modifications externes
     }
 
+    public String getCurrentMetabolism() { return currentMetabolismId; }
 
     public boolean isRunning() {
         return running;

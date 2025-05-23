@@ -1,5 +1,7 @@
 package net.john.bioreactor.content.kinetics.axenisation;
 
+import net.john.bioreactor.content.bacteria.BacteriaData;
+import net.john.bioreactor.content.bacteria.ConditionState;
 import net.john.bioreactor.content.item.BioreactorItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -31,30 +33,44 @@ public class RecipeResult {
      */
     public ItemStack processOutcomes(List<BacteriaData> remainingBacteria) {
         // Filtrer les bactéries viables (pas de condition critique 🔴)
+
         List<BacteriaData> viableBacteria = new ArrayList<>();
+        List<BacteriaData> greens = new ArrayList<>();
+
         for (BacteriaData bacteria : remainingBacteria) {
             ConditionState state = outcomes.get(bacteria);
             if (state != ConditionState.RED) { // 🔴 élimine la bactérie
                 viableBacteria.add(bacteria);
+
+                if (state == ConditionState.GREEN) {
+                    greens.add(bacteria);  // mémoriser les GREEN
+                }
+
             }
         }
 
+        /* --- Aucune bactérie viable → biomasse morte --- */
         if (viableBacteria.isEmpty()) {
-            // Aucune bactérie viable → biomasse morte
             return new ItemStack(BioreactorItems.DEAD_BIOMASS.get());
-        } else if (viableBacteria.size() == 1) {
-            BacteriaData singleBacteria = viableBacteria.get(0);
-            if (outcomes.get(singleBacteria) == ConditionState.GREEN) {
-                // Une seule bactérie avec conditions optimales → axénique
-                return singleBacteria.getAxenicOutput();
-            } else {
-                // Une seule bactérie mais conditions acceptables → enrichie
-                return createEnrichedBacteriaItem(List.of(singleBacteria));
-            }
-        } else {
-            // Plusieurs bactéries viables → enrichie multiple
-            return createEnrichedBacteriaItem(viableBacteria);
         }
+
+        /* --- EXACTEMENT UNE bactérIe GREEN → axénique --- */
+        if (greens.size() == 1) {
+            return greens.get(0).getAxenicOutput();
+        }
+
+
+        if (viableBacteria.size() == 1) {
+            BacteriaData single = viableBacteria.get(0);
+            if (outcomes.get(single) == ConditionState.GREEN) {
+                return single.getAxenicOutput();
+            } else {
+                return createEnrichedBacteriaItem(List.of(single));
+            }
+        }
+
+        return createEnrichedBacteriaItem(viableBacteria);   // plusieurs viables
+
     }
 
     /**
